@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-4 py-2 sticky-top shadow">
+  <a class="navbar-brand fw-bold fs-3">WIKA Maint</a>
+
+  <div class="ms-auto">
+    <% if (user) { %>
+      <div class="dropdown hover-dropdown">
+        <button class="btn btn-outline-dark rounded-pill px-4 dropdown-toggle" type="button"
+                id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+          <%= user.name %>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end mt-2 shadow" aria-labelledby="userDropdown">
+          <li>
+            <a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#profileModal">
+              👤 View Profile
+            </a>
+          </li>
+
+          <% if (user.department === 'normal_user') { %>
+            <li><a href="/dashboard/user" class="dropdown-item">🎫 User Dashboard</a></li>
+
+          <% } else if (user.department === 'technician') { %>
+            <li><a href="/dashboard/user" class="dropdown-item">🎫 Raise Ticket</a></li>
+            <li><a href="/dashboard/technician" class="dropdown-item">🛠 Technician Dashboard</a></li>
+
+          <% } else if (user.department === 'planner') { %>
+            <li><a href="/dashboard/user" class="dropdown-item">🎫 Raise Ticket</a></li>
+            <li><a href="/dashboard/planner" class="dropdown-item">📋 Planner Dashboard</a></li>
+            <li><a href="/dashboard/technician" class="dropdown-item">🛠 Technician Dashboard</a></li>
+
+          <% } else if (user.department === 'admin') { %>
+            <li><a href="/dashboard/admin" class="dropdown-item">📊 Admin Dashboard</a></li>
+            <li><a href="/dashboard/user" class="dropdown-item">🎫 Raise Ticket</a></li>
+            <li><a href="/dashboard/planner" class="dropdown-item">📋 Planner Dashboard</a></li>
+            <li><a href="/dashboard/technician" class="dropdown-item">🛠 Technician Dashboard</a></li>
+            <!-- Master Data Management Link for Admin Only -->
+            <li><a href="/dashboard/master" class="dropdown-item">🗃️ Master Data Management</a></li>
+          <% } %>
+
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item text-danger" href="/logout">🚪 Logout</a></li>
+        </ul>
+      </div>
+    <% } else { %>
+      <a href="/login" class="btn btn-outline-light me-2">Login</a>
+      <a href="/register" class="btn btn-light">Register</a>
+    <% } %>
+  </div>
+</nav>
+
+<% if (user) { %>
+<!-- Profile Modal -->
+<div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="profileModalLabel">👤 Your Profile</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Name:</strong> <%= user.name %></p>
+        <p><strong>Email:</strong> <%= user.email %></p>
+        <p><strong>Phone:</strong> <%= user.phone %></p>
+        <p><strong>Global ID:</strong> <%= user.globalId %></p>
+        <p><strong>Department:</strong> <%= user.department %></p>
+      </div>
+      <div class="modal-footer">
+        <a href="/logout" class="btn btn-danger">Logout</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<% } %>

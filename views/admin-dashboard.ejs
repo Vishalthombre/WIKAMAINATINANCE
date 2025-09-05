@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/admin.css" />
+  <link rel="stylesheet" href="/css/navbar.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/image-180x180.jpg">
+  <style>
+    body { background-color: #f8f9fa; }
+    .card { transition: transform 0.2s ease; }
+    .card:hover { transform: scale(1.03); }
+    .filter-btn.active { background-color: #0d6efd; color: white; }
+    .status-btns .btn { margin-right: 8px; margin-bottom: 10px; }
+    .table thead th { background-color: #e9ecef; white-space: nowrap; text-align: center; }
+    .table td, .table th { vertical-align: middle; text-align: center; padding: 0.5rem; font-size: 0.92rem; }
+    .table td { overflow-wrap: break-word; max-width: 200px; }
+    .badge-status { padding: 0.4em 0.6em; font-size: 0.85em; font-weight: 500; border-radius: 0.35rem; white-space: nowrap; }
+    .badge-Completed { background-color: #198754; color: #fff; }
+    .badge-In-Progress { background-color: #0d6efd; color: #fff; }
+    .badge-Not-Assigned { background-color: #ffc107; color: #000; }
+    .badge-Pending { background-color: #fd7e14; color: #fff; }
+    .badge-Assigned { background-color: #6610f2; color: #fff; }
+    .table-responsive { max-height: 600px; overflow-y: auto; }
+
+    /* Ticket popup */
+    .ticket-popup {
+      position: fixed;
+      right: 0;
+      top: 80px;
+      width: 380px;
+      max-width: 95%;
+      transform: translateX(110%);
+      transition: transform .25s ease;
+      z-index: 1050;
+      background: #fff;
+      height: calc(100vh - 100px);
+      overflow-y: auto;
+      padding-bottom: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    .ticket-popup.show { transform: translateX(0); }
+  </style>
+</head>
+<body>
+  <%- include('partials/navbar', { user: user }) %>
+
+  <div class="container py-4">
+    <!-- Server Messages -->
+    <% const serverError = (typeof error !== 'undefined') ? error : null; %>
+    <% const serverMessage = (typeof message !== 'undefined') ? message : null; %>
+    <% if (serverError) { %>
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error:</strong> <%= serverError %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      </div>
+    <% } %>
+    <% if (serverMessage) { %>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= serverMessage %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      </div>
+    <% } %>
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="text-primary">📊 Admin Dashboard</h2>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="row g-3 mb-4">
+      <div class="col-md-3">
+        <div class="card shadow-sm text-center">
+          <div class="card-body">
+            <h5>Total Tickets</h5>
+            <h3><%= summary?.total || 0 %></h3>
+          </div>
+        </div>
+      </div>
+      <% if (summary?.statusCounts) { %>
+        <% Object.entries(summary.statusCounts).forEach(([status, count]) => { %>
+          <div class="col-md-3">
+            <div class="card shadow-sm text-center">
+              <div class="card-body">
+                <h6><%= status %></h6>
+                <h4><%= count %></h4>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      <% } %>
+    </div>
+
+    <!-- Charts -->
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <canvas id="statusPieChart"></canvas>
+      </div>
+      <div class="col-md-6">
+        <canvas id="categoryBarChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="status-btns mb-3 text-center">
+      <% const filterButtons = ['All','Not Assigned','In Progress','Completed','Pending','Assigned']; %>
+      <% filterButtons.forEach(btn => { %>
+        <button class="btn btn-outline-primary filter-btn <%= btn === 'All' ? 'active' : '' %>" data-status="<%= btn %>"><%= btn %></button>
+      <% }) %>
+    </div>
+
+    <!-- Ticket Table -->
+    <div class="table-responsive shadow-sm">
+      <table class="table table-bordered table-hover table-striped table-sm" id="ticketTable">
+        <thead class="sticky-top">
+          <tr>
+            <th>ID</th>
+            <th>Raised By</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Keyword</th>
+            <th>Building</th>
+            <th>Area Code</th>
+            <th>Sub Area</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Assigned To</th>
+            <th>Completion Note</th>
+            <th>Completion Time</th>
+            <th>Created At</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (tickets && tickets.length > 0) { %>
+            <% tickets.forEach(ticket => { %>
+              <tr data-status="<%= ticket.status %>" data-id="<%= ticket.id %>">
+                <td><%= ticket.id %></td>
+                <td><%= ticket.raised_by || '-' %></td>
+                <td><%= ticket.category || '-' %></td>
+                <td>
+                  <% const statusClass = 'badge-' + ticket.status.replace(/\s+/g, '-'); %>
+                  <span class="badge badge-status <%= statusClass %>"><%= ticket.status %></span>
+                </td>
+                <td><%= ticket.keyword || '-' %></td>
+                <td><%= ticket.building_no || '-' %></td>
+                <td><%= ticket.area_code || '-' %></td>
+                <td><%= ticket.sub_area || '-' %></td>
+                <td><%= ticket.description || '-' %></td>
+                <td><%= ticket.location || 'Not Set' %></td>
+                <td><%= ticket.assigned_to_name || 'Unassigned' %></td>
+                <td><%= ticket.completion_note || '-' %></td>
+                <td><%= ticket.completed_at ? new Date(ticket.completed_at).toLocaleString() : '-' %></td>
+                <td><%= ticket.created_at ? new Date(ticket.created_at).toLocaleString() : '-' %></td>
+              </tr>
+            <% }) %>
+          <% } else { %>
+            <tr>
+              <td colspan="14" class="text-center text-muted">No tickets found.</td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Ticket Details Popup -->
+  <div id="ticketDetailPanel" class="ticket-popup shadow p-4 rounded-start-4" aria-live="polite" aria-atomic="true">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h5 class="mb-0 text-primary">Ticket Details</h5>
+      <button class="btn-close" onclick="closePopup()" aria-label="Close"></button>
+    </div>
+    <div id="ticketDetailsContent"></div>
+  </div>
+
+  <script>
+    const statusCounts = <%- JSON.stringify(summary?.statusCounts || {}) %>;
+    const categoryCounts = <%- JSON.stringify(summary?.categoryCounts || {}) %>;
+    const ticketsData = <%- JSON.stringify(tickets || []) %>;
+
+    // Charts
+    new Chart(document.getElementById("statusPieChart"), {
+      type: "pie",
+      data: {
+        labels: Object.keys(statusCounts),
+        datasets: [{
+          label: "Tickets by Status",
+          data: Object.values(statusCounts),
+          backgroundColor: ["#ffc107", "#0d6efd", "#198754", "#dc3545", "#6610f2", "#fd7e14"]
+        }]
+      }
+    });
+
+    new Chart(document.getElementById("categoryBarChart"), {
+      type: "bar",
+      data: {
+        labels: Object.keys(categoryCounts),
+        datasets: [{
+          label: "Tickets by Category",
+          data: Object.values(categoryCounts),
+          backgroundColor: "#0d6efd"
+        }]
+      },
+      options: { scales: { y: { beginAtZero: true } } }
+    });
+
+    // Filter buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const selectedStatus = btn.dataset.status;
+        document.querySelectorAll('#ticketTable tbody tr').forEach(row => {
+          const rowStatus = row.dataset.status;
+          row.style.display = (selectedStatus === 'All' || rowStatus === selectedStatus) ? '' : 'none';
+        });
+      });
+    });
+
+    // Ticket popup logic
+    function escapeHtml(s) {
+      if (!s) return '-';
+      return String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function showTicketDetails(ticket) {
+      const panel = document.getElementById('ticketDetailPanel');
+      const content = document.getElementById('ticketDetailsContent');
+      content.innerHTML = `
+        <p><strong>ID:</strong> ${escapeHtml(ticket.id)}</p>
+        <p><strong>Raised By:</strong> ${escapeHtml(ticket.raised_by)}</p>
+        <p><strong>Category:</strong> ${escapeHtml(ticket.category)}</p>
+        <p><strong>Keyword:</strong> ${escapeHtml(ticket.keyword)}</p>
+        <p><strong>Building:</strong> ${escapeHtml(ticket.building_no)}</p>
+        <p><strong>Area:</strong> ${escapeHtml(ticket.area_code)}</p>
+        <p><strong>Sub Area:</strong> ${escapeHtml(ticket.sub_area)}</p>
+        <p><strong>Description:</strong> ${escapeHtml(ticket.description)}</p>
+        <p><strong>Status:</strong> ${escapeHtml(ticket.status)}</p>
+        <p><strong>Assigned To:</strong> ${escapeHtml(ticket.assigned_to_name)}</p>
+        <p><strong>Completion Note:</strong> ${escapeHtml(ticket.completion_note)}</p>
+        <p><strong>Completed At:</strong> ${ticket.completed_at ? new Date(ticket.completed_at).toLocaleString() : '-'}</p>
+        <p><strong>Created At:</strong> ${ticket.created_at ? new Date(ticket.created_at).toLocaleString() : '-'}</p>
+      `;
+      panel.classList.add('show');
+    }
+
+    function closePopup() {
+      document.getElementById('ticketDetailPanel').classList.remove('show');
+    }
+
+    // Attach click on each row
+    document.querySelectorAll('#ticketTable tbody tr').forEach(row => {
+      row.addEventListener('click', () => {
+        const ticketId = row.dataset.id;
+        const ticket = ticketsData.find(t => t.id == ticketId);
+        if (ticket) showTicketDetails(ticket);
+      });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

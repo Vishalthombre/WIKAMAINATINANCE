@@ -1,0 +1,64 @@
+{
+  "Building No. 1 (Main Building)": {
+    "Ground Floor": [
+      "Assembly Shop", "CNC Shop", "Purchase", "Reception", "NABL / Quality", "POS", "CMM", "Store", "DSS", "CT"
+    ],
+    "First Floor": [
+      "HR", "Manager Cabin", "Conference Room", "Planning Office", "Plant Head Cabin", "Accounts / Finance"
+    ],
+    "Washroom": [
+      "B1-GF 01 - M - Reception",
+      "B1-GF 02 - M - Assembly",
+      "B1-GF 03 - M - CNC",
+      "B1-GF 04 - M - Maint",
+      "B1-GF 01 - F - Reception",
+      "B1-GF 02 - F - Maint",
+      "B1-FF 01 - M - Kaizan Room",
+      "B1-FF 01 - F - HR"
+    ]
+  },
+
+  "Building No. 2 (Utility - 1 Building)": {
+    "Ground Floor": [
+      "Compresser Room", "Panel Room", "DG Area"
+    ]
+  },
+
+  "Building No. 3 (Canteen Building)": {
+    "Ground Floor": ["Dining Area", "Kitchen", "Krech", "Staircase"],
+    "First Floor": ["Sales Office", "Guest Room", "Conference Room"],
+    "Washroom": ["B3-GF 01 - M", "B3-GF 01 - F", "B3-FF 01 - F", "B3-FF 01 - M"]
+  },
+
+  "Building No. 4 (Lvl Building )": {
+    "Basement": ["Store", "Staircase"],
+    "Ground Floor": ["Level", "GDMRC", "Reception", "Conference Room", "Dispatch / Quality"],
+    "Mezzanine Floor": ["Cabin Area", "Office", "Chair Room"],
+    "First Floor": ["PMO", "Open Area"],
+    "Washroom": [
+      "B4-GF 01 - M - Level", "B4-GF 01 - F - Reception", "B4-GF 02 - M - Reception",
+      "B4-MF 01 - M - Office Area", "B4-MF 01 - F - Office Area", "B4-MF 02 - F - PMO", "B4-MF 02 - M - Chair Room"
+    ]
+  },
+
+  "Building No. 5 (Utility - 2 Building)": {
+    "Ground Floor": ["Fire Pump Room", "Sewer Tank", "HT / LT Room", "DG Area", "Store"]
+  },
+
+  "Building No. 6 (FMM)": {
+    "Ground Floor": ["Production", "Store"],
+    "First Floor": ["Office", "Conference Room", "Open Area", "Pantry"],
+    "Washroom": ["B6-GF 01 - M", "B4-MF 01 - F"]
+  },
+
+  "Building No. 7 (Skid Building)": {
+    "Ground Floor": [
+      "Skid Production", "Skid Store", "Skid Office",
+      "ETM Production", "ETM Store", "ETM Office", "Conference Room"
+    ],
+    "Washroom": [
+      "B7-GF 01 - M - Office", "B7-GF 01 - F - Office",
+      "B7-GF 02 - M - Workers", "B7-GF 03 - M - Outside"
+    ]
+  }
+}

@@ -1,0 +1,151 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+body.bg-dashboard {
+ background: url('/images/user_bg.jpg') no-repeat center center fixed;
+ background-size: cover;
+  /* background-color: #aecfef !important; */
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+.form-section, .ticket-history {
+  border-radius: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.ticket-history {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.btn-outline-primary {
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-outline-primary:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+  font-size: 14px;
+}
+.category-btn.active {
+  /* Green border and subtle shadow for the active state */
+  border: 3px solid #28a745;
+  box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+
+  /* Add a subtle scaling animation */
+  transform: scale(1.05);
+  
+  /* Make all changes smooth */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+}
+
+/* Add a hover effect to all buttons for better feedback */
+.category-btn:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+}
+
+/* Slide-in Panel */
+.ticket-popup {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 360px;
+  height: 100%;
+  background-color: white;
+  z-index: 1050;
+  transition: right 0.4s ease-in-out;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.ticket-popup.show {
+  right: 0;
+}
+
+.btn-close {
+  background-color: #dc3545;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-close:hover {
+  background-color: #c82333;
+}
+
+/* Mobile responsive tweaks */
+@media (max-width: 768px) {
+  .form-section, .ticket-history {
+    padding: 16px;
+  }
+
+  .ticket-popup {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  .table th, .table td {
+    font-size: 13px;
+  }
+}
+
+/* Active state for the three main buttons */
+.btn-main {
+  border: 2px solid transparent; /* default state */
+}
+
+.btn-main.active {
+  border: 2px solid #28a745; /* green border when active */
+  box-shadow: 0 0 6px rgba(40, 167, 69, 0.5); /* optional glow */
+}
+.category-btn {
+  width: 140px;
+  height: 140px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category-btn:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.4);
+}
+
+.category-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.category-icon {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.4));
+}
+
+.category-btn span {
+  margin-top: -20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+}

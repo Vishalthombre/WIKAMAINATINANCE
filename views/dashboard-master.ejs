@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Data Management - WIKA Maint</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #27ae60;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary) !important;
+        }
+        
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+            border: none;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background-color: var(--primary);
+            color: white;
+            border-radius: 10px 10px 0 0 !important;
+            font-weight: 600;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            border: none;
+        }
+        
+        .btn-danger {
+            background-color: var(--accent);
+            border: none;
+        }
+        
+        .btn-success {
+            background-color: var(--success);
+            border: none;
+        }
+        
+        .category-badge {
+            font-size: 0.9rem;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+        
+        .building-item, .floor-item {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .section-title {
+            border-left: 4px solid var(--secondary);
+            padding-left: 10px;
+            margin: 20px 0 15px 0;
+            color: var(--dark);
+        }
+        
+        .stats-card {
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .stats-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        
+        .stats-label {
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/navbar', { user: user }) %>
+    
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="mb-4"><i class="fas fa-database me-2"></i>Master Data Management</h2>
+                
+                <!-- Statistics Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card stats-card">
+                            <div class="stats-number">3</div>
+                            <div class="stats-label">Categories</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card stats-card">
+                            <div class="stats-number">12</div>
+                            <div class="stats-label">Buildings</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card stats-card">
+                            <div class="stats-number">28</div>
+                            <div class="stats-label">Floors</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card stats-card">
+                            <div class="stats-number">156</div>
+                            <div class="stats-label">Areas</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Category Cards -->
+                <div class="row">
+                    <!-- Facility Category -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <span><i class="fas fa-building me-2"></i>Facility</span>
+                                <span class="badge bg-light text-dark">8 Buildings</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h5 class="section-title">Buildings</h5>
+                                    <button class="btn btn-sm btn-primary"><i class="fas fa-plus me-1"></i>Add Building</button>
+                                </div>
+                                
+                                <!-- Building List -->
+                                <div class="building-list">
+                                    <div class="building-item">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h6 class="mb-0">Building No. 1 (Main Building)</h6>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mt-3">
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <h6 class="section-title mb-0">Floors</h6>
+                                                <button class="btn btn-sm btn-primary"><i class="fas fa-plus me-1"></i>Add Floor</button>
+                                            </div>
+                                            
+                                            <div class="floor-item">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span>Ground Floor</span>
+                                                    <div class="action-buttons">
+                                                        <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                                        <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2">
+                                                    <span class="badge bg-light text-dark category-badge">10 Areas</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="floor-item">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span>First Floor</span>
+                                                    <div class="action-buttons">
+                                                        <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                                        <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2">
+                                                    <span class="badge bg-light text-dark category-badge">6 Areas</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="building-item">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h6 class="mb-0">Building No. 2 (Utility - 1 Building)</h6>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mt-3">
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <h6 class="section-title mb-0">Floors</h6>
+                                                <button class="btn btn-sm btn-primary"><i class="fas fa-plus me-1"></i>Add Floor</button>
+                                            </div>
+                                            
+                                            <div class="floor-item">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span>Ground Floor</span>
+                                                    <div class="action-buttons">
+                                                        <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                                        <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2">
+                                                    <span class="badge bg-light text-dark category-badge">3 Areas</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Breakdown Category -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <span><i class="fas fa-tools me-2"></i>Breakdown</span>
+                                <span class="badge bg-light text-dark">3 Areas</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h5 class="section-title">Breakdown Areas</h5>
+                                    <button class="btn btn-sm btn-primary"><i class="fas fa-plus me-1"></i>Add Area</button>
+                                </div>
+                                
+                                <!-- Breakdown Areas -->
+                                <div class="building-list">
+                                    <div class="building-item">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h6 class="mb-0">Breakdown Area 1</h6>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2">
+                                            <span class="badge bg-light text-dark category-badge">10 Items</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="building-item">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h6 class="mb-0">Breakdown Area 2</h6>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2">
+                                            <span class="badge bg-light text-dark category-badge">10 Items</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="building-item">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h6 class="mb-0">Breakdown Area 3</h6>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2">
+                                            <span class="badge bg-light text-dark category-badge">10 Items</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Safety Category -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <span><i class="fas fa-hard-hat me-2"></i>Safety</span>
+                                <span class="badge bg-light text-dark">8 Buildings</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h5 class="section-title">Buildings</h5>
+                                    <button class="btn btn-sm btn-primary"><i class="fas fa-plus me-1"></i>Add Building</button>
+                                </div>
+                                
+                                <!-- Building List -->
+                                <div class="building-list">
+                                    <div class="building-item">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h6 class="mb-0">Building No. 1 (Main Building)</h6>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mt-3">
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <h6 class="section-title mb-0">Floors</h6>
+                                                <button class="btn btn-sm btn-primary"><i class="fas fa-plus me-1"></i>Add Floor</button>
+                                            </div>
+                                            
+                                            <div class="floor-item">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span>Ground Floor</span>
+                                                    <div class="action-buttons">
+                                                        <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                                        <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2">
+                                                    <span class="badge bg-light text-dark category-badge">10 Areas</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="floor-item">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span>First Floor</span>
+                                                    <div class="action-buttons">
+                                                        <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                                        <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2">
+                                                    <span class="badge bg-light text-dark category-badge">6 Areas</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="building-item">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h6 class="mb-0">Building No. 3 (Canteen Building)</h6>
+                                            <div class="action-buttons">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mt-3">
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <h6 class="section-title mb-0">Floors</h6>
+                                                <button class="btn btn-sm btn-primary"><i class="fas fa-plus me-1"></i>Add Floor</button>
+                                            </div>
+                                            
+                                            <div class="floor-item">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span>Ground Floor</span>
+                                                    <div class="action-buttons">
+                                                        <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                                        <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2">
+                                                    <span class="badge bg-light text-dark category-badge">4 Areas</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="floor-item">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <span>First Floor</span>
+                                                    <div class="action-buttons">
+                                                        <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                                                        <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2">
+                                                    <span class="badge bg-light text-dark category-badge">3 Areas</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Building Modal -->
+    <div class="modal fade" id="addBuildingModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Building</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="buildingCategory" class="form-label">Category</label>
+                            <select class="form-select" id="buildingCategory">
+                                <option value="facility">Facility</option>
+                                <option value="safety">Safety</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="buildingName" class="form-label">Building Name</label>
+                            <input type="text" class="form-control" id="buildingName" placeholder="Enter building name">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Add Building</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Floor Modal -->
+    <div class="modal fade" id="addFloorModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Floor</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="floorBuilding" class="form-label">Building</label>
+                            <select class="form-select" id="floorBuilding">
+                                <option value="1">Building No. 1 (Main Building)</option>
+                                <option value="2">Building No. 2 (Utility - 1 Building)</option>
+                                <option value="3">Building No. 3 (Canteen Building)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="floorName" class="form-label">Floor Name</label>
+                            <input type="text" class="form-control" id="floorName" placeholder="Enter floor name">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Add Floor</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple example of modal triggering
+        document.addEventListener('DOMContentLoaded', function() {
+            // Example of opening modals when buttons are clicked
+            const addBuildingButtons = document.querySelectorAll('.btn-primary');
+            addBuildingButtons.forEach(button => {
+                if (button.textContent.includes('Add Building')) {
+                    button.setAttribute('data-bs-toggle', 'modal');
+                    button.setAttribute('data-bs-target', '#addBuildingModal');
+                } else if (button.textContent.includes('Add Floor')) {
+                    button.setAttribute('data-bs-toggle', 'modal');
+                    button.setAttribute('data-bs-target', '#addFloorModal');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

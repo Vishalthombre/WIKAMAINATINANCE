@@ -1,0 +1,80 @@
+body {
+  background: url('/images/user_bg.jpg') no-repeat center center fixed;
+ background-size: cover;
+  /* background-color: #aecfef; */
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.logout-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.ticket-panel {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  height: 500px;
+  overflow-y: auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.ticket-box {
+  background-color: #eef3f8;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.ticket-box:hover {
+  background-color: #ddeaf7;
+  transform: translateY(-2px);
+}
+
+.filter-input {
+  border-radius: 12px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.badge-status {
+  font-size: 0.75rem;
+  margin-top: 6px;
+  display: inline-block;
+}
+
+.inline-popup {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .ticket-panel {
+    height: 400px;
+  }
+
+  .logout-btn {
+    position: static;
+    display: block;
+    margin: 0 auto 20px;
+    text-align: center;
+  }
+}

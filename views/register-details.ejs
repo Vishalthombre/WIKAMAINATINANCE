@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Complete Registration</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS (same as register-id.css reused) -->
+  <link rel="stylesheet" href="/css/register-id.css" />
+  <!-- ✅ Required for PWA -->
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#007bff"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/image-180x180.jpg">
+</head>
+<body>
+
+  <div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card form-card">
+      <div class="card-header">
+        <h3>WIKA Maintenance Portal</h3>
+        <p style="font-size: 0.9rem;">Complete Your Registration</p>
+      </div>
+
+      <div class="card-body">
+        <p><strong class="text-white">Name:</strong> <span class="text-light"><%= user.name %></span></p>
+        <p><strong class="text-white">Email:</strong> <span class="text-light"><%= user.email %></span></p>
+        <p><strong class="text-white">Phone:</strong> <span class="text-light"><%= user.phone %></span></p>
+        <p><strong class="text-white">Department:</strong> <span class="text-light"><%= user.department %></span></p>
+
+        <form method="POST" action="/register/complete">
+          <input type="hidden" name="globalId" value="<%= user.global_id %>" />
+
+          <div class="mb-3 mt-3">
+            <label class="form-label text-white">Create Password</label>
+            <input type="password" name="password" class="form-control" placeholder="Enter a secure password" required />
+          </div>
+
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Register</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card-footer">
+        Already registered? <a href="/login" class="text-white fw-bold">Login here</a>
+      </div>
+    </div>
+  </div>
+<script src="/js/register-sw.js"></script>
+</body>
+</html>

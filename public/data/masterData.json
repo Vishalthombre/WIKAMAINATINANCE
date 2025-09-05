@@ -1,0 +1,1130 @@
+{
+  "Pune": {
+    "Facility": {
+      "Building No. 1 (Main Building)": {
+        "Ground Floor": [
+          "Assembly Shop",
+          "CNC Shop",
+          "Purchase",
+          "Reception",
+          "NABL / Quality",
+          "POS",
+          "CMM",
+          "Store",
+          "DSS",
+          "CT"
+        ],
+        "First Floor": [
+          "HR",
+          "Manager Cabin",
+          "Conference Room",
+          "Planning Office",
+          "Plant Head Cabin",
+          "Accounts / Finance"
+        ],
+        "Washroom": [
+          "B1-GF 01 - M - Reception",
+          "B1-GF 02 - M - Assembly",
+          "B1-GF 03 - M - CNC",
+          "B1-GF 04 - M - Maint",
+          "B1-GF 01 - F - Reception",
+          "B1-GF 02 - F - Maint",
+          "B1-FF 01 - M - Kaizan Room",
+          "B1-FF 01 - F - HR"
+        ]
+      },
+      "Building No. 2 (Utility - 1 Building)": {
+        "Ground Floor": [
+          "Compresser Room",
+          "Panel Room",
+          "DG Area"
+        ]
+      },
+      "Building No. 3 (Canteen Building)": {
+        "Ground Floor": [
+          "Dining Area",
+          "Kitchen",
+          "Krech",
+          "Staircase"
+        ],
+        "First Floor": [
+          "Sales Office",
+          "Guest Room",
+          "Conference Room"
+        ],
+        "Washroom": [
+          "B3-GF 01 - M",
+          "B3-GF 01 - F",
+          "B3-FF 01 - F",
+          "B3-FF 01 - M"
+        ]
+      },
+      "Building No. 4 (Lvl Building )": {
+        "Basement": [
+          "Store",
+          "Staircase"
+        ],
+        "Ground Floor": [
+          "Level",
+          "GDMRC",
+          "Reception",
+          "Conference Room",
+          "Dispatch / Quality"
+        ],
+        "Mezzanine Floor": [
+          "Cabin Area",
+          "Office",
+          "Chair Room"
+        ],
+        "First Floor": [
+          "PMO",
+          "Open Area"
+        ],
+        "Washroom": [
+          "B4-GF 01 - M - Level",
+          "B4-GF 01 - F - Reception",
+          "B4-GF 02 - M - Reception",
+          "B4-MF 01 - M - Office Area",
+          "B4-MF 01 - F - Office Area",
+          "B4-MF 02 - F - PMO",
+          "B4-MF 02 - M - Chair Room"
+        ]
+      },
+      "Building No. 5 (Utility - 2 Building)": {
+        "Ground Floor": [
+          "Fire Pump Room",
+          "Sewer Tank",
+          "HT / LT Room",
+          "DG Area",
+          "Store"
+        ]
+      },
+      "Building No. 6 (FMM)": {
+        "Ground Floor": [
+          "Production",
+          "Store"
+        ],
+        "First Floor": [
+          "Office",
+          "Conference Room",
+          "Open Area",
+          "Pantry"
+        ],
+        "Washroom": [
+          "B6-GF 01 - M",
+          "B4-MF 01 - F"
+        ]
+      },
+      "Building No. 7 (Skid Building)": {
+        "Ground Floor": [
+          "Skid Production",
+          "Skid Store",
+          "Skid Office",
+          "ETM Production",
+          "ETM Store",
+          "ETM Office",
+          "Conference Room"
+        ],
+        "Washroom": [
+          "B7-GF 01 - M - Office",
+          "B7-GF 01 - F - Office",
+          "B7-GF 02 - M - Workers",
+          "B7-GF 03 - M - Outside"
+        ]
+      }
+    },
+    "Breakdown": {
+      "Breakdown Area 1": [
+        "Broken",
+        "Damage",
+        "New",
+        "Leakage",
+        "Clogged",
+        "Irregular Temperature",
+        "Crack",
+        "Damaged",
+        "Accident",
+        "Noisy"
+      ],
+      "Breakdown Area 2": [
+        "Broken",
+        "Damage",
+        "New",
+        "Leakage",
+        "Clogged",
+        "Irregular Temperature",
+        "Crack",
+        "Damaged",
+        "Accident",
+        "Noisy"
+      ],
+      "Breakdown Area 3": [
+        "Broken",
+        "Damage",
+        "New",
+        "Leakage",
+        "Clogged",
+        "Irregular Temperature",
+        "Crack",
+        "Damaged",
+        "Accident",
+        "Noisy"
+      ]
+    },
+    "Safety": {
+      "Building No. 1 (Main Building)": {
+        "Ground Floor": [
+          "Assembly Shop",
+          "CNC Shop",
+          "Purchase",
+          "Reception",
+          "NABL / Quality",
+          "POS",
+          "CMM",
+          "Store",
+          "DSS",
+          "CT"
+        ],
+        "First Floor": [
+          "HR",
+          "Manager Cabin",
+          "Conference Room",
+          "Planning Office",
+          "Plant Head Cabin",
+          "Accounts / Finance"
+        ],
+        "Washroom": [
+          "B1-GF 01 - M - Reception",
+          "B1-GF 02 - M - Assembly",
+          "B1-GF 03 - M - CNC",
+          "B1-GF 04 - M - Maint",
+          "B1-GF 01 - F - Reception",
+          "B1-GF 02 - F - Maint",
+          "B1-FF 01 - M - Kaizan Room",
+          "B1-FF 01 - F - HR"
+        ]
+      },
+      "Building No. 2 (Utility - 1 Building)": {
+        "Ground Floor": [
+          "Compresser Room",
+          "Panel Room",
+          "DG Area"
+        ]
+      },
+      "Building No. 3 (Canteen Building)": {
+        "Ground Floor": [
+          "Dining Area",
+          "Kitchen",
+          "Krech",
+          "Staircase"
+        ],
+        "First Floor": [
+          "Sales Office",
+          "Guest Room",
+          "Conference Room"
+        ],
+        "Washroom": [
+          "B3-GF 01 - M",
+          "B3-GF 01 - F",
+          "B3-FF 01 - F",
+          "B3-FF 01 - M"
+        ]
+      },
+      "Building No. 4 (Lvl Building )": {
+        "Basement": [
+          "Store",
+          "Staircase"
+        ],
+        "Ground Floor": [
+          "Level",
+          "GDMRC",
+          "Reception",
+          "Conference Room",
+          "Dispatch / Quality"
+        ],
+        "Mezzanine Floor": [
+          "Cabin Area",
+          "Office",
+          "Chair Room"
+        ],
+        "First Floor": [
+          "PMO",
+          "Open Area"
+        ],
+        "Washroom": [
+          "B4-GF 01 - M - Level",
+          "B4-GF 01 - F - Reception",
+          "B4-GF 02 - M - Reception",
+          "B4-MF 01 - M - Office Area",
+          "B4-MF 01 - F - Office Area",
+          "B4-MF 02 - F - PMO",
+          "B4-MF 02 - M - Chair Room"
+        ]
+      },
+      "Building No. 5 (Utility - 2 Building)": {
+        "Ground Floor": [
+          "Fire Pump Room",
+          "Sewer Tank",
+          "HT / LT Room",
+          "DG Area",
+          "Store"
+        ]
+      },
+      "Building No. 6 (FMM)": {
+        "Ground Floor": [
+          "Production",
+          "Store"
+        ],
+        "First Floor": [
+          "Office",
+          "Conference Room",
+          "Open Area",
+          "Pantry"
+        ],
+        "Washroom": [
+          "B6-GF 01 - M",
+          "B4-MF 01 - F"
+        ]
+      },
+      "Building No. 7 (Skid Building)": {
+        "Ground Floor": [
+          "Skid Production",
+          "Skid Store",
+          "Skid Office",
+          "ETM Production",
+          "ETM Store",
+          "ETM Office",
+          "Conference Room"
+        ],
+        "Washroom": [
+          "B7-GF 01 - M - Office",
+          "B7-GF 01 - F - Office",
+          "B7-GF 02 - M - Workers",
+          "B7-GF 03 - M - Outside"
+        ]
+      }
+    }
+  },
+  "Ghaziabad": {
+    "Facility":{
+      "Admin Block": {
+        "Ground Floor": [
+            "Reception",
+            "INGZB1 Meeting Room– R1101 (Vrindavan)",
+            "INGZB1 Meeting Room– R1101 (Mathura)",
+            "PA room",
+            "GM Office",
+            "Finance",
+            "HR",
+            "Manager Cubical",
+            "Open work station",
+            "INGZB1 Meeting Room / R1103- (Varanasi)",
+            "INGZB1-ConferenceRoom–H1101 ( Pryagraj)",
+            "Sales area- Open work station",
+            "INGZB1 Meeting Room– R1101 (Meerut)",
+            "Record Room",
+            "Server room",
+            "UPS room",
+            "Pantry-01",
+            "Pantry-02",
+            "Canteen-Dining area",
+            "Canteen- Kitchen",
+            "Canteen- Washing area",
+            "Canteen- Store",
+            "Canteen- Drinking water"
+          ],
+        "First Floor": [
+            "Training hall near NABL Lab-(Ayodhya)",
+            "Nabl - Lab (Mechanical)",
+            "Nabl - Lab (Electrical)",
+            "Nabl - Lab (Thermal)",
+            "Open area",
+            "Visitor galary",
+            "Terrace- 01 (Main building)",
+            "Terrace-02 Worker washroom"
+          ],
+        "Washroom": [
+            "Ladies washroom-01",
+            "Gents washroom-01",
+            "VIP washroom",
+            "Ladies washroom-02",
+            "Gents washroom-02",
+            "Handwash area - Canteen",
+            "Warehouse washroom",
+            "Worker -Ladies washroom",
+            "Worker- Gents washroom"
+          ]
+      },
+      "Assembly Production": {
+        "Ground Floor": [
+          "PSM-630 line",
+          "PSM-520 Line",
+          "PSM-550 Line",
+          "111 gauge line",
+          "213 Gauge line",
+          "Hallwa Bellows line",
+          "DPSM line",
+          "Curl line",
+          "Bimetal line",
+          "Temperature room",
+          "Endurance testing room",
+          "Dial printing room",
+          "Production office",
+          "Syphon line",
+          "AFCG line"
+        ]
+      },
+      "Machine Shop production": {
+        "Ground Floor": [
+          "Tool room",
+          "Press section",
+          "Dril & Tap section",
+          "Spot welding section",
+          "Soldering & Brazing",
+          "Tube cutting section",
+          "Cleaning section",
+          "Painting section",
+          "Vacuum oven",
+          "Bellows section"
+        ]
+      },
+      "Warehouse": {
+        "Ground Floor": [
+          "Warehouse",
+          "IQC office"
+        ]
+      },
+      "B  uilding No. 2\n(Utility - 1 Building)": {
+        "Ground Floor": [
+          "Transformer Yard",
+          "DG Yard",
+          "ETP & STP yard",
+          "Panel Room",
+          "Maintenance store",
+          "Compressor room",
+          "General water supply room",
+          "Chemical room",
+          "Fire pump room",
+          "Overhead Water storage tank",
+          "Gas storage yard",
+          "Oil Storage",
+          "Hazardosu Waste storage",
+          "Utility Washroom",
+          "Utility Terrace"
+        ]
+      },
+      "Security Block-01": {
+        "Ground Floor": [
+          "Security -sitting area",
+          "Driver waiting room",
+          "Security washroom"
+        ]
+      },
+      "Security Bolck-02": {
+        "Ground Floor": [
+          "Security -sitting area",
+          "Security washroom"
+        ]
+      }
+    },
+    "Breakdown": {
+      "Breakdown Area 1": [
+        "Broken",
+        "Damage",
+        "New",
+        "Leakage",
+        "Clogged",
+        "Irregular Temperature",
+        "Crack",
+        "Damaged",
+        "Accident",
+        "Noisy"
+      ],
+      "Breakdown Area 2": [
+        "Broken",
+        "Damage",
+        "New",
+        "Leakage",
+        "Clogged",
+        "Irregular Temperature",
+        "Crack",
+        "Damaged",
+        "Accident",
+        "Noisy"
+      ],
+      "Breakdown Area 3": [
+        "Broken",
+        "Damage",
+        "New",
+        "Leakage",
+        "Clogged",
+        "Irregular Temperature",
+        "Crack",
+        "Damaged",
+        "Accident",
+        "Noisy"
+      ]
+    },
+    "Safety":{
+      "Admin Block": {
+        "Ground Floor": [
+            "Reception",
+            "INGZB1 Meeting Room– R1101 (Vrindavan)",
+            "INGZB1 Meeting Room– R1101 (Mathura)",
+            "PA room",
+            "GM Office",
+            "Finance",
+            "HR",
+            "Manager Cubical",
+            "Open work station",
+            "INGZB1 Meeting Room / R1103- (Varanasi)",
+            "INGZB1-ConferenceRoom–H1101 ( Pryagraj)",
+            "Sales area- Open work station",
+            "INGZB1 Meeting Room– R1101 (Meerut)",
+            "Record Room",
+            "Server room",
+            "UPS room",
+            "Pantry-01",
+            "Pantry-02",
+            "Canteen-Dining area",
+            "Canteen- Kitchen",
+            "Canteen- Washing area",
+            "Canteen- Store",
+            "Canteen- Drinking water"
+          ],
+        "First Floor": [
+            "Training hall near NABL Lab-(Ayodhya)",
+            "Nabl - Lab (Mechanical)",
+            "Nabl - Lab (Electrical)",
+            "Nabl - Lab (Thermal)",
+            "Open area",
+            "Visitor galary",
+            "Terrace- 01 (Main building)",
+            "Terrace-02 Worker washroom"
+          ],
+        "Washroom": [
+            "Ladies washroom-01",
+            "Gents washroom-01",
+            "VIP washroom",
+            "Ladies washroom-02",
+            "Gents washroom-02",
+            "Handwash area - Canteen",
+            "Warehouse washroom",
+            "Worker -Ladies washroom",
+            "Worker- Gents washroom"
+          ]
+      },
+      "Assembly Production": {
+        "Ground Floor": [
+          "PSM-630 line",
+          "PSM-520 Line",
+          "PSM-550 Line",
+          "111 gauge line",
+          "213 Gauge line",
+          "Hallwa Bellows line",
+          "DPSM line",
+          "Curl line",
+          "Bimetal line",
+          "Temperature room",
+          "Endurance testing room",
+          "Dial printing room",
+          "Production office",
+          "Syphon line",
+          "AFCG line"
+        ]
+      },
+      "Machine Shop production": {
+        "Ground Floor": [
+          "Tool room",
+          "Press section",
+          "Dril & Tap section",
+          "Spot welding section",
+          "Soldering & Brazing",
+          "Tube cutting section",
+          "Cleaning section",
+          "Painting section",
+          "Vacuum oven",
+          "Bellows section"
+        ]
+      },
+      "Warehouse": {
+        "Ground Floor": [
+          "Warehouse",
+          "IQC office"
+        ]
+      },
+      "B  uilding No. 2\n(Utility - 1 Building)": {
+        "Ground Floor": [
+          "Transformer Yard",
+          "DG Yard",
+          "ETP & STP yard",
+          "Panel Room",
+          "Maintenance store",
+          "Compressor room",
+          "General water supply room",
+          "Chemical room",
+          "Fire pump room",
+          "Overhead Water storage tank",
+          "Gas storage yard",
+          "Oil Storage",
+          "Hazardosu Waste storage",
+          "Utility Washroom",
+          "Utility Terrace"
+        ]
+      },
+      "Security Block-01": {
+        "Ground Floor": [
+          "Security -sitting area",
+          "Driver waiting room",
+          "Security washroom"
+        ]
+      },
+      "Security Bolck-02": {
+        "Ground Floor": [
+          "Security -sitting area",
+          "Security washroom"
+        ]
+      }
+    }
+  },
+  "Palwal": {
+    "Facility":{
+  "Admin Block ": {
+    "Ground Floor": [
+      "Reception -Desk",
+      "Meeting Room-1",
+      "Meeting Room-2",
+      "Lift Loby",
+      "Staircase Lift side",
+      "Stair Case Wash room side",
+      "Washroom- Male",
+      "Washroom- Female",
+      "Janitor Roon"
+    ],
+    "First Floor": [
+      "MD Office",
+      "Accounts / Finance",
+      "Manager Cabins",
+      "Conference Room",
+      "Meeting Room- Sales",
+      "Meeting Room- Account",
+      "Meeting Room Design",
+      "Sales Area",
+      "Design Area",
+      "Purchase Area",
+      "Waiting Area",
+      "Pantry",
+      "Lift Loby",
+      "Meeting Room- Qaulity",
+      "Washroom-Male-1 (Near Confrence room)",
+      "Washroom-Male-2",
+      "Washroom- Female",
+      "Washroom- Handicaped"
+    ],
+    "Second Floor": [
+      "Manager Cabins",
+      "Meeting Room-1",
+      "Meeting Room-2",
+      "Meeting Room-3",
+      "Pantry",
+      "Lift Loby",
+      "Waiting Area",
+      "Office Area",
+      "Washroom-Male",
+      "Washroom- Female",
+      "Record Area"
+    ]
+  },
+  "Flow Lab": {
+    "Flow lab Office": [
+      "Office Area",
+      "PLC Room",
+      "Store"
+    ],
+    "Flow Lab Work Area": [
+      "Pump House",
+      "Pipe Line Area"
+    ]
+  },
+  "Shop Floor": {
+    "Assembly Section": [
+      "Work Area",
+      "Oxygen Room",
+      "Washing Area",
+      "Super Market"
+    ],
+    "Valve - Menifold ": [
+      "VMC Section",
+      "CNC Section",
+      "Tool- Crib",
+      "Buffing Room",
+      "Connection Area",
+      "Conventional Machine Area"
+    ],
+    "Machine Shop": [
+      "CNC Section",
+      "Laser Marking Room",
+      "Conventional Machine Area"
+    ],
+    "Pre Fabrication ": [
+      "Machining Section",
+      "Rolling Section"
+    ],
+    "Fabrication": [
+      "Welding Section",
+      "Heating Section",
+      "Grinding Section",
+      "Paint Shop",
+      "Hydro Section",
+      "Sand Blasting",
+      "RT Lab"
+    ],
+    "Office": [
+      "Production Head office",
+      "Mainteance Head Office",
+      "Maintenance Office",
+      "Quality Office",
+      "In -coming Quality Office",
+      "Dispatch Office",
+      "Store Office",
+      "Mezzanine Cabin -Febrication",
+      "War Room",
+      "Maezzanine cabin- CNC /VMC Section"
+    ],
+    "Washroom": [
+      "Staff Washroom- Bay-1",
+      "Workers Washrrom- Bay-1",
+      "Female washroom- Bay-1",
+      "Handicaped Washroom -Bay-1",
+      "Workers Washrrom- Bay-3"
+    ],
+    "Basment": [
+      "Main store",
+      "Finish goods store"
+    ],
+    "Utility Section": [
+      "RO / Fire Pump",
+      "Compressor Room"
+    ]
+  },
+  "Canteen Block": {
+    "Ground Floor": [
+      "Dispencery",
+      "Training Room",
+      "Drivers Room",
+      "Washroom"
+    ],
+    "First Floor": [
+      "Dining Area",
+      "Kitchen Area",
+      "Store Area",
+      "Handwash Area"
+    ],
+    "Second Floor": [
+      "Guest Room",
+      "Jim Area",
+      "Workers Rest Room",
+      "Washroom"
+    ],
+    "Utility Section": [
+      "LT Room",
+      "VCB Room",
+      "Transformer Area",
+      "PNG Meter Area",
+      "Main Meter Room",
+      "DG Area"
+    ]
+  },
+  "Out Side": {
+    "Security Office": [
+      "Security Office"
+    ],
+    "Utility Section": [
+      "STP"
+    ],
+    "Store Area": [
+      "Scrap Yard",
+      "Paint Store Area"
+    ]
+  }
+},
+    "Breakdown": {
+      "Breakdown Area 1": [
+        "Broken",
+        "Damage",
+        "New",
+        "Leakage",
+        "Clogged",
+        "Irregular Temperature",
+        "Crack",
+        "Damaged",
+        "Accident",
+        "Noisy"
+      ],
+      "Breakdown Area 2": [
+        "Broken",
+        "Damage",
+        "New",
+        "Leakage",
+        "Clogged",
+        "Irregular Temperature",
+        "Crack",
+        "Damaged",
+        "Accident",
+        "Noisy"
+      ],
+      "Breakdown Area 3": [
+        "Broken",
+        "Damage",
+        "New",
+        "Leakage",
+        "Clogged",
+        "Irregular Temperature",
+        "Crack",
+        "Damaged",
+        "Accident",
+        "Noisy"
+      ]
+    },
+    "Safety":{
+  "Admin Block ": {
+    "Ground Floor": [
+      "Reception -Desk",
+      "Meeting Room-1",
+      "Meeting Room-2",
+      "Lift Loby",
+      "Staircase Lift side",
+      "Stair Case Wash room side",
+      "Washroom- Male",
+      "Washroom- Female",
+      "Janitor Roon"
+    ],
+    "First Floor": [
+      "MD Office",
+      "Accounts / Finance",
+      "Manager Cabins",
+      "Conference Room",
+      "Meeting Room- Sales",
+      "Meeting Room- Account",
+      "Meeting Room Design",
+      "Sales Area",
+      "Design Area",
+      "Purchase Area",
+      "Waiting Area",
+      "Pantry",
+      "Lift Loby",
+      "Meeting Room- Qaulity",
+      "Washroom-Male-1 (Near Confrence room)",
+      "Washroom-Male-2",
+      "Washroom- Female",
+      "Washroom- Handicaped"
+    ],
+    "Second Floor": [
+      "Manager Cabins",
+      "Meeting Room-1",
+      "Meeting Room-2",
+      "Meeting Room-3",
+      "Pantry",
+      "Lift Loby",
+      "Waiting Area",
+      "Office Area",
+      "Washroom-Male",
+      "Washroom- Female",
+      "Record Area"
+    ]
+  },
+  "Flow Lab": {
+    "Flow lab Office": [
+      "Office Area",
+      "PLC Room",
+      "Store"
+    ],
+    "Flow Lab Work Area": [
+      "Pump House",
+      "Pipe Line Area"
+    ]
+  },
+  "Shop Floor": {
+    "Assembly Section": [
+      "Work Area",
+      "Oxygen Room",
+      "Washing Area",
+      "Super Market"
+    ],
+    "Valve - Menifold ": [
+      "VMC Section",
+      "CNC Section",
+      "Tool- Crib",
+      "Buffing Room",
+      "Connection Area",
+      "Conventional Machine Area"
+    ],
+    "Machine Shop": [
+      "CNC Section",
+      "Laser Marking Room",
+      "Conventional Machine Area"
+    ],
+    "Pre Fabrication ": [
+      "Machining Section",
+      "Rolling Section"
+    ],
+    "Fabrication": [
+      "Welding Section",
+      "Heating Section",
+      "Grinding Section",
+      "Paint Shop",
+      "Hydro Section",
+      "Sand Blasting",
+      "RT Lab"
+    ],
+    "Office": [
+      "Production Head office",
+      "Mainteance Head Office",
+      "Maintenance Office",
+      "Quality Office",
+      "In -coming Quality Office",
+      "Dispatch Office",
+      "Store Office",
+      "Mezzanine Cabin -Febrication",
+      "War Room",
+      "Maezzanine cabin- CNC /VMC Section"
+    ],
+    "Washroom": [
+      "Staff Washroom- Bay-1",
+      "Workers Washrrom- Bay-1",
+      "Female washroom- Bay-1",
+      "Handicaped Washroom -Bay-1",
+      "Workers Washrrom- Bay-3"
+    ],
+    "Basment": [
+      "Main store",
+      "Finish goods store"
+    ],
+    "Utility Section": [
+      "RO / Fire Pump",
+      "Compressor Room"
+    ]
+  },
+  "Canteen Block": {
+    "Ground Floor": [
+      "Dispencery",
+      "Training Room",
+      "Drivers Room",
+      "Washroom"
+    ],
+    "First Floor": [
+      "Dining Area",
+      "Kitchen Area",
+      "Store Area",
+      "Handwash Area"
+    ],
+    "Second Floor": [
+      "Guest Room",
+      "Jim Area",
+      "Workers Rest Room",
+      "Washroom"
+    ],
+    "Utility Section": [
+      "LT Room",
+      "VCB Room",
+      "Transformer Area",
+      "PNG Meter Area",
+      "Main Meter Room",
+      "DG Area"
+    ]
+  },
+  "Out Side": {
+    "Security Office": [
+      "Security Office"
+    ],
+    "Utility Section": [
+      "STP"
+    ],
+    "Store Area": [
+      "Scrap Yard",
+      "Paint Store Area"
+    ]
+  }
+}
+  },
+  "Chennai": {
+    "Facility": {
+  "Building No. 126\n(Machine Shop/HT Yard)": {
+    "Ground Floor": [
+      "Press Shop",
+      "CNC Shop",
+      "Conventional MC shop",
+      "3rd Bay",
+      "HT Yard",
+      "Compressor yard",
+      "Machine Shop Office"
+    ]
+  },
+  "Building No. 127\n(Production, Maint.Room, Engineering, IT,CT lab)": {
+    "Ground Floor": [
+      "Production Office",
+      "PS/DPS Line",
+      "DPG Line",
+      "FSM line",
+      "Sub Assy line",
+      "Flow Line",
+      "Temp line",
+      "Welding/Soldering Line",
+      "Despatch Area",
+      "Despatch/FQC office",
+      "RO Plant",
+      "Scrap yard"
+    ],
+    "First Floor": [
+      "Maintenance Room",
+      "EPD Line",
+      "Oil flow Lab",
+      "Dark Room",
+      "Metrology Room",
+      "Training Hall",
+      "IT Room",
+      "Proto Lab",
+      "Engineering - Office",
+      "CT Lab"
+    ],
+    "Washroom": [
+      "127 GF - Male",
+      "127 GF - Female",
+      "127 FF - Male",
+      "127 FF - Female"
+    ]
+  },
+  "Building No. 128\n(Store, IQC)": {
+    "Ground Floor": [
+      "Main Stores",
+      "IQC Office",
+      "Welding Area",
+      "Shearing MC Area"
+    ],
+    "First Floor": [
+      "FG store",
+      "Maint. Store",
+      "Engg. dept MC shop",
+      "House keeping Room",
+      "Sports Hall",
+      "20 Bar Compressor Yard"
+    ],
+    "Washroom": [
+      "128 GF - Male",
+      "128 GF - Female",
+      "128 FF - Male"
+    ]
+  },
+  "Building No. 129\n(Office Building)": {
+    "Ground Floor": [
+      "Reception",
+      "FSFD Line",
+      "Canteen",
+      "40bar Compressor Yard"
+    ],
+    "First Floor": [
+      "Office Area",
+      "Conference hall -1"
+    ],
+    "Second Floor": [
+      "Office Area",
+      "Conference hall -2"
+    ],
+    "Washroom": [
+      "129 GF - Male",
+      "129 FF - Male",
+      "129 SF - Female"
+    ]
+  }
+},
+    "Safety": {
+  "Building No. 126\n(Machine Shop/HT Yard)": {
+    "Ground Floor": [
+      "Press Shop",
+      "CNC Shop",
+      "Conventional MC shop",
+      "3rd Bay",
+      "HT Yard",
+      "Compressor yard",
+      "Machine Shop Office"
+    ]
+  },
+  "Building No. 127\n(Production, Maint.Room, Engineering, IT,CT lab)": {
+    "Ground Floor": [
+      "Production Office",
+      "PS/DPS Line",
+      "DPG Line",
+      "FSM line",
+      "Sub Assy line",
+      "Flow Line",
+      "Temp line",
+      "Welding/Soldering Line",
+      "Despatch Area",
+      "Despatch/FQC office",
+      "RO Plant",
+      "Scrap yard"
+    ],
+    "First Floor": [
+      "Maintenance Room",
+      "EPD Line",
+      "Oil flow Lab",
+      "Dark Room",
+      "Metrology Room",
+      "Training Hall",
+      "IT Room",
+      "Proto Lab",
+      "Engineering - Office",
+      "CT Lab"
+    ],
+    "Washroom": [
+      "127 GF - Male",
+      "127 GF - Female",
+      "127 FF - Male",
+      "127 FF - Female"
+    ]
+  },
+  "Building No. 128\n(Store, IQC)": {
+    "Ground Floor": [
+      "Main Stores",
+      "IQC Office",
+      "Welding Area",
+      "Shearing MC Area"
+    ],
+    "First Floor": [
+      "FG store",
+      "Maint. Store",
+      "Engg. dept MC shop",
+      "House keeping Room",
+      "Sports Hall",
+      "20 Bar Compressor Yard"
+    ],
+    "Washroom": [
+      "128 GF - Male",
+      "128 GF - Female",
+      "128 FF - Male"
+    ]
+  },
+  "Building No. 129\n(Office Building)": {
+    "Ground Floor": [
+      "Reception",
+      "FSFD Line",
+      "Canteen",
+      "40bar Compressor Yard"
+    ],
+    "First Floor": [
+      "Office Area",
+      "Conference hall -1"
+    ],
+    "Second Floor": [
+      "Office Area",
+      "Conference hall -2"
+    ],
+    "Washroom": [
+      "129 GF - Male",
+      "129 FF - Male",
+      "129 SF - Female"
+    ]
+  }
+}
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "Facility Service": [
+    "Broken",
+    "Damage",
+    "New",
+    "Leakage",
+    "Clogged",
+    "Irregular Temperature",
+    "Crack",
+    "Damaged",
+    "Accident",
+    "Noisy"
+  ],
+  "Safety": [
+    "Fire Safety",
+    "Electrical Hazard",
+    "Chemical / Hazardous Material",
+    "Slip / Trip / Fall Hazard",
+    "Machine / Equipment Safety",
+    "Personal Protective Equipment (PPE) Issue",
+    "Ergonomics",
+    "Irregular Temperature",
+    "Work at Height",
+    "Confined Space",
+    "Environmental Concern",
+    "First Aid / Medical Emergency",
+    "Near Miss",
+    "Unsafe Act / Behavior",
+    "Security Concern",
+    "Other"
+  ],
+  "Breakdown": [
+    "sample 1",
+    "sample 2",
+    "sample 3"
+  ]
+}

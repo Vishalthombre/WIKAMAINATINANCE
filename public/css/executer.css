@@ -1,0 +1,58 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: url('/images/user_bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  /* background-color: #aecfef !important; */
+  background-size: cover;
+}
+
+h2 {
+  font-weight: 600;
+}
+
+.ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.ticket-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+  border-left: 5px solid #1d437c;
+  min-height: 260px;
+}
+
+.ticket-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+}
+
+textarea {
+  resize: none;
+}
+
+@media (max-width: 768px) {
+  .ticket-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+  }
+
+  textarea {
+    font-size: 0.9rem;
+  }
+}
+
+.ticket-completed {
+  opacity: 0.85;
+  border-left-color: #198754; /* green */
+}
+
+.ticket-completed .badge {
+  background-color: #198754 !important;
+}
