@@ -375,7 +375,7 @@ app.use((req, res) => {
 
 // -------- Start server --------
 const PORT = process.env.PORT || 3000;
-(async () => {
+(async () => {  
   try {
     console.log('⏳ Running DB smoke test (SELECT 1) ...');
     const ok = await runQuery('SELECT 1 AS ok', []);
@@ -384,6 +384,6 @@ const PORT = process.env.PORT || 3000;
     app.listen(PORT, () => console.log(`🚀 Server running at http://localhost:${PORT}`));
   } catch (err) {
     console.error('❌ Failed to start server (DB issue):', err);
-    process.exit(1);
+    process.exit(1); 
   }
 })();
